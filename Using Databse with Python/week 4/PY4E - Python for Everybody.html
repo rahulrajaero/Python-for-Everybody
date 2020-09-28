@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html style="height: 100%;" lang="en"><head><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PY4E - Python for Everybody</title>
+        <script>
+        var _TSUGI = {
+            context_title: "Using Databases with Python",
+            link_title: "Many Students in Many Courses",
+            user_displayname: "Rahul Raj",
+            ajax_session: "PHPSESSID=8c3d0e692f2093241ec87afaa735e735",
+            heartbeat: 1500000,
+            heartbeat_url: "https://www.py4e.com/tsugi/util/heartbeat?msec=1500000&PHPSESSID=8c3d0e692f2093241ec87afaa735e735",
+            rest_path: {"parent":"\/tools\/sql-intro","base_url":"https:\/\/www.py4e.com","controller":"","extra":"","action":false,"parameters":[],"current":"\/tools\/sql-intro","full":"\/tools\/sql-intro"},
+            spinnerUrl: "https://static.tsugi.org/img/spinner.gif",
+            staticroot: "https://static.tsugi.org",
+            websocket_url: false,
+            websocket_token: false,
+            window_close_message: "Application complete",
+            session_expire_message: "Your session has expired"
+        }
+        </script>
+        <!-- Tiny bit of JS -->
+        <script src="PY4E%20-%20Python%20for%20Everybody_files/tsugiscripts_head.js"></script>
+        <!-- Le styles -->
+        <link href="PY4E%20-%20Python%20for%20Everybody_files/bootstrap.css" rel="stylesheet">
+        <link href="PY4E%20-%20Python%20for%20Everybody_files/jquery-ui.css" rel="stylesheet">
+                <link href="PY4E%20-%20Python%20for%20Everybody_files/all.css" rel="stylesheet">
+        <link href="PY4E%20-%20Python%20for%20Everybody_files/v4-shims.css" rel="stylesheet">
+        <style>:root {--primary:#0D47A1;--primary-menu:#0D47A1;--primary-border:#0d4295;--primary-darker:#0c4091;--primary-darkest:#0b3b85;--secondary:#EEEEEE;--secondary-menu:#EEEEEE;--text:#111111;--text-light:#5E5E5E;--background-color:#FFFFFF;--font-family:sans-serif;--font-size:14px;}</style>
+          <link href="PY4E%20-%20Python%20for%20Everybody_files/tsugi2.css" rel="stylesheet">
+
+          <style>
+                        </style>
+<style>
+a[target="_blank"]:after {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 600;
+    content: " \f35d";
+}
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+    }
+body {
+    top: 0px !important;
+    }
+</style>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="http://localhost/tsugi/vendor/tsugi/lib/static/js/html5shiv/html5shiv.js"></script>
+          <script src="http://localhost/tsugi/vendor/tsugi/lib/static/js/respond/respond.min.js"></script>
+        <![endif]-->
+
+    <script type="text/javascript">CSRF_TOKEN = "5f684658ec7cb";</script>
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="PY4E%20-%20Python%20for%20Everybody_files/translateelement.css"><script type="text/javascript" charset="UTF-8" src="PY4E%20-%20Python%20for%20Everybody_files/main.js"></script><script type="text/javascript" charset="UTF-8" src="PY4E%20-%20Python%20for%20Everybody_files/element_main.js"></script></head>
+<body prefix="oer: http://oerschema.org" style="padding-top: 5.93rem; position: relative; min-height: 100%; top: 0px;" class="vsc-initialized">
+<div id="body_container" class="container">
+<script>
+if (window!=window.top) {
+    document.getElementById("body_container").className = "container-fluid";
+} else {
+    document.getElementById("body_container").className = "container";
+}
+</script>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="tsugi_main_nav_bar" style="display: block;">  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="javascript:window_close();">Done</a>
+    </div>
+    <div class="navbar-collapse collapse">
+    </div> <!--/.nav-collapse -->
+  </div> <!--container -->
+</nav>
+<script>
+if ( ! inIframe() ) {
+  document.getElementById('tsugi_main_nav_bar').style.display = 'block';
+  document.getElementsByTagName('body')[0].style.paddingTop = '5.93rem';
+}
+</script>
+<!-- Modal -->
+<div id="settings" class="modal fade" role="dialog" style="display: none;">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span class="fa fa-close" aria-hidden="true"></span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Many Students in Many Courses Settings</h4>
+      </div>
+      <div class="modal-body">
+                  <img id="settings_spinner" src="PY4E%20-%20Python%20for%20Everybody_files/spinner.gif" style="display: none">
+            <span id="save_fail" class="text-danger" style="display:none;">Unable to save settings</span>
+            <p>Exercise is set to Many-to-Many SQLITE (Courses)</p><p>There is currently no due date/time for this assignment.</p>
+              </div>
+    </div>
+
+  </div>
+</div>
+<div id="flashmessages"></div><p>Welcome Rahul Raj from Using Databases with Python</p>
+<p>
+</p><form method="post"><input type="hidden" name="PHPSESSID" value="8c3d0e692f2093241ec87afaa735e735">
+To get credit for this assignment, perform the instructions below and 
+enter the code you get here: <br>
+<input type="text" size="80" name="sha1">
+<input type="submit">
+</form>
+(Hint: starts with 416)<br>
+<p></p>
+<h1>Instructions</h1>
+<p>
+This application will read roster data in JSON format, parse the file, and
+then produce an SQLite database that contains a User, Course, and Member table
+and populate the tables from the data file.
+</p>
+<p>
+You can base your solution on this code:
+<a href="https://www.py4e.com/code3/roster/roster.py" target="_blank">
+http://www.py4e.com/code3/roster/roster.py</a> - this code is incomplete
+as you need to modify the program to store the <b>role</b> column 
+in the <b>Member</b> table to complete the assignment.
+</p>
+<p>
+Each student gets their own file for the assignment.  Download 
+<a href="https://www.py4e.com/tools/sql-intro/roster_data.php?PHPSESSID=8c3d0e692f2093241ec87afaa735e735" target="_blank">this file</a> and save it
+as <code>roster_data.json</code>.  Move the downloaded file into the same
+folder as your <code>roster.py</code> program.
+</p>
+<p>
+Once you have made the necessary changes to the program
+and it has been run successfully reading the above JSON data, 
+run the following SQL command:
+</p><pre>SELECT hex(User.name || Course.title || Member.role ) AS X FROM 
+    User JOIN Member JOIN Course 
+    ON User.id = Member.user_id AND Member.course_id = Course.id
+    ORDER BY X
+</pre>
+Find the <b>first</b> row in the resulting record set and enter the long string that looks like 
+<b>53656C696E613333</b>.
+<p></p>
+<script src="PY4E%20-%20Python%20for%20Everybody_files/jquery-1.js"></script>
+<script src="PY4E%20-%20Python%20for%20Everybody_files/bootstrap.js"></script>
+<script src="PY4E%20-%20Python%20for%20Everybody_files/jquery-ui.js"></script>
+<script src="PY4E%20-%20Python%20for%20Everybody_files/jquery.js"></script>
+<script src="PY4E%20-%20Python%20for%20Everybody_files/handlebars-v4.js"></script>
+<script src="PY4E%20-%20Python%20for%20Everybody_files/tmpl.js"></script>
+<script src="PY4E%20-%20Python%20for%20Everybody_files/tsugiscripts.js"></script>
+<script type="text/javascript">
+    HEARTBEAT_TIMEOUT = setTimeout(doHeartBeat, _TSUGI.heartbeat);
+    tsugiEmbedMenu();
+</script>
+<div id="google_translate_element" style="position: fixed; right: 1em; bottom: 0.25em;"><div class="skiptranslate goog-te-gadget" dir="ltr" style=""><div id=":0.targetLanguage" style="white-space: nowrap;" class="goog-te-gadget-simple"><img src="PY4E%20-%20Python%20for%20Everybody_files/cleardot.gif" class="goog-te-gadget-icon" alt="" style="background-image: url(&quot;https://translate.googleapis.com/translate_static/img/te_ctrl3.gif&quot;); background-position: -65px 0px;"><span style="vertical-align: middle;"><a aria-haspopup="true" class="goog-te-menu-value" href="javascript:void(0)"><span>Select Language</span><img src="PY4E%20-%20Python%20for%20Everybody_files/cleardot.gif" alt="" width="1" height="1"><span style="border-left: 1px solid rgb(187, 187, 187);">​</span><img src="PY4E%20-%20Python%20for%20Everybody_files/cleardot.gif" alt="" width="1" height="1"><span style="color: rgb(118, 118, 118);" aria-hidden="true">▼</span></a></span></div></div></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: "en", layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, "google_translate_element");
+}
+</script><script type="text/javascript" src="PY4E%20-%20Python%20for%20Everybody_files/element.js"></script>
+
+</div><script src="PY4E%20-%20Python%20for%20Everybody_files/webcomponents-lite.js"></script><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="PY4E%20-%20Python%20for%20Everybody_files/translate_24dp.png" alt="Google Translate" width="20" height="20"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Original text</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div>
+
+<div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div><iframe class="goog-te-menu-frame skiptranslate" title="Language Translate Widget" style="visibility: visible; box-sizing: content-box; width: 1026px; height: 274px; display: none;" frameborder="0"></iframe></body></html>
